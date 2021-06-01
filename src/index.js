@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "modern-normalize/modern-normalize.css";
-// import './index.css';
+import "./styles.css";
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

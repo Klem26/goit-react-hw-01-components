@@ -1,17 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import styles from "./Statistics.module.css";
+
 const Statistics = ({ title, stats }) => {
   return (
-    <section>
-      {title && <h2>{title}</h2>}
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
 
-      <ul>
+      <ul className={styles.statList}>
         {stats.map(({ id, label, percentage }) => {
+          const getRandom = (min, max) => {
+            return Math.ceil(Math.random() * (max - min) + min);
+          };
           return (
-            <li key={id}>
-              <span>{label}</span>
-              <span>{percentage}</span>
+            <li
+              key={id}
+              className={styles.item}
+              style={{
+                backgroundColor: `rgb(${getRandom(0, 255)}, ${getRandom(
+                  0,
+                  255
+                )}, ${getRandom(0, 255)})`,
+              }}
+            >
+              <span className={styles.label}>{label}</span>
+              <span className={styles.percentage}>{percentage}%</span>
             </li>
           );
         })}

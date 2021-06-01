@@ -14,7 +14,6 @@ import transactions from "./components/transaction-history/transactions.json";
 const App = () => {
   return (
     <div>
-      <h1>Привет Мир</h1>
       <Profile
         avatar={user.avatar}
         name={user.name}
